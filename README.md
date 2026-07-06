@@ -1,4 +1,7 @@
 # Projeto Aurora — Protótipo
+> 🏆 **2º lugar** do [HackaWoman](https://hackawoman.vercel.app/)
+
+
 ## O que é o Projeto?
 Módulo de IA para detecção e acolhimento em casos de violência patrimonial, integrável a qualquer instituição financeira via API REST.
 
@@ -118,10 +121,3 @@ Esse desenho evita dois problemas: deixar de proteger uma vítima só porque o d
 - **RAG**: Postgres + `pgvector` ou Chroma, hospedado em banco gerenciado
 - **LLM**: VM(s) com Ollama + Phi-3, grupo de auto scaling baseado em fila de requisições pendentes
 - **Object Storage**: armazenamento dos documentos-fonte (cartilha, legislação) usados na ingestão do RAG
-
-## Próximos passos
-
-- [ ] Implementar o worker consumidor da fila do lado Aurora
-- [ ] Popular o banco vetorial com a cartilha e a Lei Maria da Penha
-- [ ] Configurar auto scaling da VM Ollama por tamanho de fila
-- [ ] Documentar critérios de elegibilidade para a Carta de Crédito
