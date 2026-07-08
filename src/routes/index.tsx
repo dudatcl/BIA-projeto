@@ -5,8 +5,6 @@ import {
   Zap,
   Barcode,
   CreditCard,
-  Landmark,
-  TrendingUp,
   Network,
   SlidersHorizontal,
   Eye,
@@ -173,7 +171,7 @@ function PhoneFrame({ children }: { children: React.ReactNode }) {
   return (
     <div className="relative h-[844px] w-[390px] overflow-hidden rounded-[48px] border-[10px] border-neutral-900 bg-white shadow-2xl">
       <div className="pointer-events-none absolute left-1/2 top-0 z-30 h-6 w-40 -translate-x-1/2 rounded-b-3xl bg-neutral-900" />
-      <div className="relative h-full w-full overflow-y-auto overflow-x-hidden bg-white">
+      <div className="no-scrollbar relative h-full w-full overflow-y-auto overflow-x-hidden bg-white">
         {children}
       </div>
     </div>
@@ -337,7 +335,10 @@ function FavIcon({
   onClick?: () => void;
 }) {
   return (
-    <button onClick={onClick} className="flex flex-col items-center gap-1.5">
+    <button
+      onClick={onClick}
+      className="flex shrink-0 flex-col items-center gap-1.5"
+    >
       <div className="grid h-14 w-14 place-items-center rounded-2xl bg-white shadow-[var(--shadow-icon)] ring-1 ring-black/5">
         <Icon className="h-6 w-6 text-primary" strokeWidth={1.8} />
       </div>
@@ -390,44 +391,37 @@ function Screen1Home({ go }: { go: (s: ScreenId) => void }) {
         </div>
       </BrandHeader>
 
-      <div className="-mt-2 px-5">
-        <h2 className="mb-3 text-[15px] font-extrabold">Favoritos</h2>
-        <div className="grid grid-cols-4 gap-y-4">
-          <FavIcon icon={ArrowLeftRight} label="Transferências" />
-          <FavIcon icon={Zap} label="Pix" onClick={() => go("pix1")} />
-          <FavIcon icon={Barcode} label="Pagamentos" />
-          <FavIcon icon={CreditCard} label="Cartões" />
-          <FavIcon icon={Landmark} label="Empréstimos" />
-          <FavIcon icon={TrendingUp} label="Investimentos" />
-          <FavIcon icon={Network} label="Open Finance" />
-          <FavIcon icon={SlidersHorizontal} label="Personalizar" />
-        </div>
-      </div>
-
-      {/* Discreet alert card — the "padrão" trigger */}
-      <div className="mt-6 px-5">
+      {/* Discreet alert card — the "padrão" trigger — the primary, distinct entry point */}
+      <div className="px-5 pt-5">
         <button
           onClick={() => go("2")}
-          className="flex w-full items-center gap-3 rounded-2xl bg-white p-3 text-left shadow-[var(--shadow-card)] ring-1 ring-black/5"
+          className="flex w-full items-center gap-3 rounded-2xl p-3.5 text-left text-white shadow-lg"
+          style={{ background: "var(--gradient-brand)" }}
         >
-          <div className="grid h-16 w-16 shrink-0 place-items-center rounded-xl bg-gradient-to-br from-primary-light to-primary">
-            <Sparkles className="h-7 w-7 text-white" />
+          <div className="grid h-14 w-14 shrink-0 place-items-center rounded-xl bg-white/15">
+            <Sparkles className="h-6 w-6" />
           </div>
           <div className="flex-1">
             <div className="text-[13px] font-bold leading-tight">
               Notamos um padrão nas suas movimentações
             </div>
-            <div className="mt-1 text-[11px] text-muted-foreground">
+            <div className="mt-1 text-[11px] opacity-85">
               Toque para conversar com a Aurora
             </div>
           </div>
-          <ChevronRight className="h-5 w-5 text-primary" />
+          <ChevronRight className="h-5 w-5" />
         </button>
-        <div className="mt-3 flex justify-center gap-1.5">
-          <span className="h-1.5 w-4 rounded-full bg-primary" />
-          <span className="h-1.5 w-1.5 rounded-full bg-primary/25" />
-          <span className="h-1.5 w-1.5 rounded-full bg-primary/25" />
-          <span className="h-1.5 w-1.5 rounded-full bg-primary/25" />
+      </div>
+
+      <div className="px-5 pt-6">
+        <h2 className="mb-3 text-[15px] font-extrabold">Atalhos</h2>
+        <div className="no-scrollbar -mx-5 flex gap-4 overflow-x-auto px-5">
+          <FavIcon icon={Zap} label="Pix" onClick={() => go("pix1")} />
+          <FavIcon icon={ArrowLeftRight} label="Transferências" />
+          <FavIcon icon={Barcode} label="Pagamentos" />
+          <FavIcon icon={CreditCard} label="Cartões" />
+          <FavIcon icon={Network} label="Open Finance" />
+          <FavIcon icon={SlidersHorizontal} label="Personalizar" />
         </div>
       </div>
 
@@ -460,16 +454,17 @@ function Screen1Home({ go }: { go: (s: ScreenId) => void }) {
         </div>
       </div>
 
-      {/* Persistent discreet shortcut (for users who chose "não quero falar agora") */}
-      <button
-        onClick={() => go("3")}
-        className="fixed left-1/2 bottom-4 z-20 flex -translate-x-1/2 items-center gap-2 rounded-full border border-border bg-white/95 px-3 py-1.5 text-[11px] font-semibold text-foreground/70 shadow-md backdrop-blur"
-        style={{ position: "absolute" }}
-        aria-label="Retomar conversa de apoio"
-      >
-        <Heart className="h-3.5 w-3.5 text-primary" />
-        Conteúdos guardados para você
-      </button>
+      {/* Discreet shortcut for users who chose "não quero falar agora" — in normal flow, not overlapping other content */}
+      <div className="mt-6 flex justify-center px-5">
+        <button
+          onClick={() => go("3")}
+          className="flex items-center gap-2 rounded-full border border-border bg-muted/60 px-3.5 py-2 text-[11px] font-semibold text-foreground/70"
+          aria-label="Retomar conversa de apoio"
+        >
+          <Heart className="h-3.5 w-3.5 text-primary" />
+          Conteúdos guardados para você
+        </button>
+      </div>
     </div>
   );
 }
