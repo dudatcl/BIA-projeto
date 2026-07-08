@@ -662,7 +662,7 @@ function Screen3Index({ go }: { go: (s: ScreenId) => void }) {
   return (
     <div className="min-h-full bg-white pb-8">
       <SimpleHeader title="Cartilha" onBack={() => go("2")} />
-      <div className="px-5">
+      <div className="px-5 pt-5">
         <p className="mb-4 text-[13px] text-muted-foreground">
           Conteúdos preparados com apoio de especialistas. Toque em um tema para
           ler.
@@ -708,7 +708,7 @@ function Screen4Article({ go }: { go: (s: ScreenId) => void }) {
   return (
     <div className="min-h-full bg-white pb-8">
       <SimpleHeader title="Cartilha" onBack={() => go("3")} />
-      <div className="px-5">
+      <div className="px-5 pt-5">
         <div className="mb-5 grid h-40 place-items-center rounded-2xl bg-gradient-to-br from-primary/10 via-primary/5 to-transparent">
           <div className="relative">
             <div className="grid h-24 w-24 place-items-center rounded-full bg-white shadow-md">
@@ -1066,7 +1066,7 @@ function Screen5Steps({ go }: { go: (s: ScreenId) => void }) {
   return (
     <div className="flex min-h-full flex-col bg-white pb-8">
       <SimpleHeader title="Caminhos possíveis" onBack={() => go("4")} />
-      <div className="px-5">
+      <div className="px-5 pt-5">
         <div className="mb-4 flex items-center gap-1">
           {steps.map((_, i) => (
             <div
@@ -1224,7 +1224,7 @@ function Screen6Referral({ go }: { go: (s: ScreenId) => void }) {
           title="Confirmar contato"
           onBack={() => setConfirmingIdx(null)}
         />
-        <div className="px-5">
+        <div className="px-5 pt-5">
           <div className="rounded-2xl border-2 border-primary bg-primary/5 p-4">
             <div className="flex items-center gap-3">
               <div className="grid h-11 w-11 place-items-center rounded-xl bg-white text-primary">
@@ -1283,7 +1283,7 @@ function Screen6Referral({ go }: { go: (s: ScreenId) => void }) {
   return (
     <div className="min-h-full bg-white pb-8">
       <SimpleHeader title="Encaminhamento" onBack={() => go("5")} />
-      <div className="px-5">
+      <div className="px-5 pt-5">
         <h2 className="text-[18px] font-extrabold leading-tight">
           Encontramos esses pontos de apoio perto de você
         </h2>
@@ -1356,7 +1356,7 @@ function Screen7Onboarding({ go }: { go: (s: ScreenId) => void }) {
   return (
     <div className="min-h-full bg-white pb-8">
       <SimpleHeader title="Configurações" onBack={() => go("1")} />
-      <div className="px-5">
+      <div className="px-5 pt-5">
         <div className="grid h-16 w-16 place-items-center rounded-2xl bg-primary/10">
           <ShieldCheck className="h-8 w-8 text-primary" strokeWidth={1.6} />
         </div>
@@ -1474,7 +1474,7 @@ function ScreenPix1({ go }: { go: (s: ScreenId) => void }) {
   return (
     <div className="flex min-h-full flex-col bg-white pb-8">
       <SimpleHeader title="Pix" onBack={() => go("1")} />
-      <div className="px-5">
+      <div className="px-5 pt-5">
         <label className="text-[12px] font-bold text-foreground/70">
           Valor
         </label>
@@ -1525,7 +1525,7 @@ function ScreenPix2({ go }: { go: (s: ScreenId) => void }) {
   return (
     <div className="flex min-h-full flex-col bg-white pb-8">
       <SimpleHeader title="Revisar transferência" onBack={() => go("pix1")} />
-      <div className="px-5">
+      <div className="px-5 pt-5">
         <div className="rounded-2xl border border-border bg-muted/40 p-4">
           <div className="text-center">
             <div className="text-[11px] font-bold uppercase tracking-wider text-muted-foreground">
