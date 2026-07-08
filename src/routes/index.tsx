@@ -66,8 +66,16 @@ type ScreenId =
 
 const SCREENS: { id: ScreenId; label: string; group: string }[] = [
   { id: "1", label: "1. Home + alerta discreto", group: "Fluxo de apoio" },
-  { id: "2", label: "2. BIA — pergunta de controle", group: "Fluxo de apoio" },
-  { id: "2b", label: "2b. BIA — resposta acolhedora", group: "Fluxo de apoio" },
+  {
+    id: "2",
+    label: "2. Aurora — pergunta de controle",
+    group: "Fluxo de apoio",
+  },
+  {
+    id: "2b",
+    label: "2b. Aurora — resposta acolhedora",
+    group: "Fluxo de apoio",
+  },
   { id: "3", label: "3. Cartilha (índice)", group: "Fluxo de apoio" },
   { id: "4", label: "4. Cartilha (detalhe)", group: "Fluxo de apoio" },
   { id: "5", label: "5. Passo a passo aprofundado", group: "Fluxo de apoio" },
@@ -111,7 +119,7 @@ function Prototype() {
               </div>
               <div>
                 <div className="text-sm font-extrabold leading-tight">
-                  BIA Protege
+                  Aurora Protege
                 </div>
                 <div className="text-xs text-muted-foreground">
                   Protótipo · v2
@@ -375,7 +383,7 @@ function Screen1Home({ go }: { go: (s: ScreenId) => void }) {
           </div>
           <input
             className="flex-1 bg-transparent text-[13px] text-foreground/80 outline-none placeholder:text-foreground/50"
-            placeholder="Buscar serviço ou falar com a BIA"
+            placeholder="Buscar serviço ou falar com a Aurora"
             readOnly
           />
           <Search className="mr-2 h-4 w-4 text-foreground/60" />
@@ -410,7 +418,7 @@ function Screen1Home({ go }: { go: (s: ScreenId) => void }) {
               Notamos um padrão nas suas movimentações
             </div>
             <div className="mt-1 text-[11px] text-muted-foreground">
-              Toque para conversar com a BIA
+              Toque para conversar com a Aurora
             </div>
           </div>
           <ChevronRight className="h-5 w-5 text-primary" />
@@ -474,7 +482,7 @@ function Screen2Chat({ go }: { go: (s: ScreenId) => void }) {
 
   return (
     <div className="flex min-h-full flex-col bg-muted/30">
-      <SimpleHeader title="BIA" onBack={() => go("1")} />
+      <SimpleHeader title="Aurora" onBack={() => go("1")} />
 
       <div className="flex-1 space-y-3 px-4 pb-4 pt-2">
         <BiaBubble>
@@ -562,7 +570,7 @@ function Screen2Chat({ go }: { go: (s: ScreenId) => void }) {
 function Screen2bChatDeclined({ go }: { go: (s: ScreenId) => void }) {
   return (
     <div className="flex min-h-full flex-col bg-muted/30">
-      <SimpleHeader title="BIA" onBack={() => go("2")} />
+      <SimpleHeader title="Aurora" onBack={() => go("2")} />
       <div className="flex-1 space-y-3 px-4 pb-4 pt-2">
         <BiaBubble>
           Tudo bem, sem problemas. Se quiser conversar sobre isso depois, é só
@@ -1000,11 +1008,12 @@ function Screen5Steps({ go }: { go: (s: ScreenId) => void }) {
               openId={openCard}
               setOpen={setOpenCard}
               icon={GraduationCap}
-              title="Educação e capacitação gratuita — Fundação Bradesco"
+              title="Educação e capacitação gratuita"
               highlight
             >
               <p>
-                <b>O que é:</b> a Fundação Bradesco oferece cursos gratuitos{" "}
+                <b>O que é:</b> fundações e institutos de responsabilidade
+                social oferecem cursos gratuitos{" "}
                 <b>presenciais e a distância</b> — educação básica,
                 profissionalizante e digital — voltados à empregabilidade e
                 geração de renda.
@@ -1016,8 +1025,8 @@ function Screen5Steps({ go }: { go: (s: ScreenId) => void }) {
               <LocateButton>Ver escola/curso mais próximo</LocateButton>
               <p className="mt-2 text-[10px] text-muted-foreground">
                 * Nomes de cursos, unidades e requisitos deste card são{" "}
-                <b>placeholder</b> — validar com a fonte oficial da Fundação
-                Bradesco antes de publicar.
+                <b>placeholder</b> — validar com a fonte oficial da
+                instituição parceira antes de publicar.
               </p>
             </ExpandCard>
           </div>
@@ -1366,7 +1375,7 @@ function Screen7Onboarding({ go }: { go: (s: ScreenId) => void }) {
 
         <div className="mt-5 flex items-center justify-between rounded-2xl border-2 border-primary bg-primary/5 p-4">
           <div className="pr-4">
-            <div className="text-[14px] font-bold">Proteção BIA</div>
+            <div className="text-[14px] font-bold">Proteção Aurora</div>
             <div className="mt-0.5 text-[11px] text-muted-foreground">
               Ativar detecção discreta
             </div>

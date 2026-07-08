@@ -81,36 +81,26 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       meta: [
         { charSet: "utf-8" },
         { name: "viewport", content: "width=device-width, initial-scale=1" },
-        { title: "BIA Protege — Protótipo Bradesco" },
+        { title: "Aurora — Protótipo" },
         {
           name: "description",
           content:
-            "Protótipo de extensão da BIA para detecção discreta de violência patrimonial.",
+            "Protótipo de assistente para detecção discreta de violência patrimonial, integrável a qualquer instituição financeira.",
         },
         { name: "author", content: "Protótipo" },
-        { property: "og:title", content: "BIA Protege — Protótipo Bradesco" },
+        { property: "og:title", content: "Aurora — Protótipo" },
         {
           property: "og:description",
           content:
-            "Protótipo de extensão da BIA para detecção discreta de violência patrimonial.",
+            "Protótipo de assistente para detecção discreta de violência patrimonial, integrável a qualquer instituição financeira.",
         },
         { property: "og:type", content: "website" },
-        { name: "twitter:card", content: "summary_large_image" },
-        { name: "twitter:title", content: "BIA Protege — Protótipo Bradesco" },
+        { name: "twitter:card", content: "summary" },
+        { name: "twitter:title", content: "Aurora — Protótipo" },
         {
           name: "twitter:description",
           content:
-            "Protótipo de extensão da BIA para detecção discreta de violência patrimonial.",
-        },
-        {
-          property: "og:image",
-          content:
-            "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/415de994-ee1d-408f-adf1-399f17a04412/id-preview-882c02be--e1f3b56d-9910-430f-ac25-5379d02c2f70.lovable.app-1783181036505.png",
-        },
-        {
-          name: "twitter:image",
-          content:
-            "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/415de994-ee1d-408f-adf1-399f17a04412/id-preview-882c02be--e1f3b56d-9910-430f-ac25-5379d02c2f70.lovable.app-1783181036505.png",
+            "Protótipo de assistente para detecção discreta de violência patrimonial, integrável a qualquer instituição financeira.",
         },
       ],
       links: [
